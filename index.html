@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thohir Developer | CEO Tampan & Pebisnis Properti</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #0a0f1c 0%, #0f1625 100%);
+            color: #eef2ff;
+            scroll-behavior: smooth;
+        }
+
+        /* background mewah dengan grain */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,215,0,0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* HERO SECTION - PREMIUM */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            background: rgba(15, 25, 45, 0.65);
+            backdrop-filter: blur(12px);
+            border-radius: 3rem;
+            padding: 2.5rem 3rem;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            box-shadow: 0 35px 60px -20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .gold-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f5b042, #ffd966);
+            color: #0a0f1c;
+            font-weight: 800;
+            padding: 0.3rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #ffffff, #ffdd99, #ffc857);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #ffdd99;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #cbd5e6;
+            max-width: 550px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(95deg, #ffc857, #ff9f2e);
+            border: none;
+            color: #0a0f1c;
+            font-weight: bold;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(255,200,0,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(95deg, #ffd966, #ffb347);
+            box-shadow: 0 12px 20px -8px rgba(255,200,0,0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #ffc857;
+            color: #ffdd99;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,200,0,0.1);
+            border-color: #ffea9e;
+            color: white;
+        }
+
+        /* FOTO CEO TAMPAN */
+        .hero-image {
+            flex: 0.8;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            box-shadow: 0 40px 50px -20px rgba(0,0,0,0.5), 0 0 0 4px rgba(255,215,0,0.3);
+            transition: 0.4s ease;
+            border: 2px solid rgba(255,215,0,0.5);
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+            border-radius: 50% 50% 45% 55%;
+        }
+
+        /* SECTIONS */
+        .card-premium {
+            background: rgba(20, 30, 55, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255,215,0,0.2);
+            transition: 0.2s;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title span {
+            background: #ffc85720;
+            padding: 8px 12px;
+            border-radius: 60px;
+            font-size: 1.6rem;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        .stat-item {
+            background: #0f1625cc;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            border-bottom: 3px solid #ffc857;
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffdd99;
+        }
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #ffc857;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+            color: #e2e8ff;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,215,0,0.2);
+            font-size: 0.85rem;
+            color: #8a99b5;
+        }
+
+        @media (max-width: 800px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding: 1.8rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-description { margin-left: auto; margin-right: auto; }
+            .btn-group { justify-content: center; }
+            .section-title { justify-content: center; text-align: center; flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- HERO : THOHIR DEVELOPER - CEO TAMPAN -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="gold-badge">✦ THE VISIONARY LEADER ✦</div>
+            <h1>Thohir Developer</h1>
+            <div class="hero-tagline">CEO Tampan | Pebisnis Properti & Investasi</div>
+            <p class="hero-description">
+                Menggabungkan leadership visioner, ketajaman bisnis, dan gaya eksekutif modern. 
+                Thohir dikenal sebagai ikon entrepreneur muda yang karismatik dan disegani.
+            </p>
+            <div class="btn-group">
+                <a href="#" class="btn-primary">Hubungi untuk Kolaborasi</a>
+                <a href="#" class="btn-outline">Portofolio Proyek →</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- GANTI nama file foto sesuai foto yang sudah di-download dari catbox -->
+            <img src="thohir.jpg" alt="Thohir Developer - CEO Tampan" onerror="this.src='https://placehold.co/500x500?text=THOHIR+DEVELOPER&bg=111315&color=ffcc44'">
+        </div>
+    </div>
+
+    <!-- TENTANG / PRESTIGE -->
+    <div class="card-premium">
+        <div class="section-title"><span>👔</span> Profil Eksekutif</div>
+        <p style="font-size: 1.05rem; margin-bottom: 1rem;">Thohir Developer — Founder & Chairman dari <strong>Thohir Group</strong> (properti, teknologi, dan energi terbarukan). Dikenal karena keberanian berinovasi dan gaya kepemimpinan yang menginspirasi. Wajahnya kerap menghiasi sampul majalah bisnis sebagai <strong>"CEO tampan dengan Midas touch"</strong>.</p>
+        <div class="stats-grid">
+            <div class="stat-item"><div class="stat-number">28<small style="font-size: 0.9rem;">+</small></div><div>Proyek Premium</div></div>
+            <div class="stat-item"><div class="stat-number">12<small>+</small></div><div>Tahun Karir</div></div>
+            <div class="stat-item"><div class="stat-number">1.2k<small>+</small></div><div>Tim & Mitra</div></div>
+            <div class="stat-item"><div class="stat-number">8<small></small></div><div>Penghargaan</div></div>
+        </div>
+        <div class="quote">
+            “Kesuksesan bukan hanya tentang angka, tapi tentang integritas dan dampak. 
+            Seorang pemimpin harus tampil memukau, berani beda, dan tetap rendah hati.” <br>— Thohir Developer
+        </div>
+    </div>
+
+    <!-- KILAS KARIR / PENCAPAIAN -->
+    <div class="card-premium">
+        <div class="section-title"><span>🏆</span> Jejak Gemilang</div>
+        <ul style="list-style-type: none; margin: 1rem 0;">
+            <li style="margin-bottom: 0.8rem;">✨ <strong>2022-2024</strong> : Top 10 Young CEO versi Forbes Indonesia</li>
+            <li style="margin-bottom: 0.8rem;">✨ <strong>2023</strong> : Property Visionary Award – Pengembang Muda Terbaik</li>
+            <li style="margin-bottom: 0.8rem;">✨ <strong>2025</strong> : Dinobatkan sebagai "CEO Tampan paling berpengaruh di industri properti"</li>
+        </ul>
+        <p>Thohir juga aktif sebagai mentor startup dan pembicara di berbagai konferensi internasional, selalu tampil dengan gaya khas yang memadukan power suit dan senyuman kharismatik.</p>
+    </div>
+
+    <!-- CALL TO ACTION -->
+    <div style="text-align: center; margin-top: 1rem;">
+        <a href="#" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">💬 Hubungi Thohir Developer</a>
+        <p style="margin-top: 1.2rem; font-size: 0.8rem; color: #b9c3dd;">Media, kerjasama bisnis, atau sekadar terinspirasi oleh perjalanan CEO tampan ini.</p>
+    </div>
+
+    <footer>
+        Thohir Developer — The Handsome CEO & Visionary Entrepreneur. © 2025
+    </footer>
+</div>
+</body>
+</html>
